@@ -11,9 +11,7 @@
 
     $ npm install mapquest
 
-## API
-
-### Location Object
+## Location Object
 
   All functions return a location object. An example location object for the Google Headquarters is below.
 
@@ -44,6 +42,8 @@
       mapUrl: 'http://open.mapquestapi.com/staticmap/v4/getmap?type=map&size=225,160&pois=purple-1,37.423581,-122.086672,0,0|&center=37.423581,-122.086672&zoom=12&key=Kmjtd%7Cluu7n162n1%2C22%3Do5-h61wh&rand=2110607258',
       adminArea3Type: 'State' 
     }
+
+## API
 
 ### .geocode(address, callback)
 
