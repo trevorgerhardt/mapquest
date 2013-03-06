@@ -43,10 +43,10 @@ module.exports.reverse = function(coordinates, callback) {
  * Batch geocode addresses
  */
 
-module.exports.batch = function(locations, callback) {
+module.exports.batch = function(addresses, callback) {
   var batch = get(url + '/batch');
-  for (var i = 0; i < locations.length; i++) {
-    batch.query({ location: locations[i] });
+  for (var i = 0; i < addresses.length; i++) {
+    batch.query({ location: addresses[i] });
   }
   batch.end(function(err, res) {
     if (err) {
