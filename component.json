@@ -3,8 +3,15 @@
   "repo": "trevorgerhardt/mapquest",
   "description": "Geocode, reverse geocode, and batch geocode using MapQuests open api.",
   "version": "0.0.1",
-  "keywords": [],
-  "dependencies": {},
+  "keywords": [
+    "mapquest",
+    "geocode",
+    "address",
+    "location"
+  ],
+  "dependencies": {
+    "visionmedia/superagent": "*"
+  },
   "development": {},
   "license": "MIT",
   "scripts": [
