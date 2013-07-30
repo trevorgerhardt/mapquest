@@ -16,6 +16,7 @@ describe('MqpQuest', function() {
       });
     });
 
+    
     it('should return nothing for an empty address', function(done) {
       mapquest.geocode('', function(err, res) {
         should.not.exist(res);
@@ -28,6 +29,15 @@ describe('MqpQuest', function() {
         should.not.exist(res);
         done(err);
       });
+    });
+  });
+
+  describe('#gecodeAuthenticated()', function() {
+    it('should take an optional api key', function(done) {
+      mapquest.geocodeAuthenticated('FAKEKEY', '1 Infinite Loop, Cupertino, CA 95014', function(err, res) {
+        should.not.exist(res);
+        done(err);
+      });      
     });
   });
 
@@ -49,6 +59,15 @@ describe('MqpQuest', function() {
     });
   });
 
+  describe('#reverseAuthenticated()', function() {
+    it('should take an API Key', function(done) {
+      mapquest.reverseAuthenticated('FAKEKEY', { latitude: apple.latLng.lat, longitude: apple.latLng.lng }, function(err, res) {
+        should.not.exist(res);
+        done(err);
+      });
+    });
+  });
+
   describe('#batch()', function() {
     it('should geocode multiple addresses at once', function(done) {
       mapquest.batch([ '1 Infinite Loop, Cupertino, CA 95014', '1600 Amphitheatre Parkway, Mountain View, CA 94043' ], function(err, res) {
@@ -59,4 +78,13 @@ describe('MqpQuest', function() {
       });
     });
   });
+
+  describe('#batchAuthenticated()', function() {
+    it('should take an API Key', function(done) {
+      mapquest.batchAuthenticated('FAKEKEY', [ '1 Infinite Loop, Cupertino, CA 95014', '1600 Amphitheatre Parkway, Mountain View, CA 94043' ], function(err, res) {
+        should.not.exist(res[0]);
+        done(err);
+      });
+    });
+  });  
 });

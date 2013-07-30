@@ -25,6 +25,16 @@ module.exports.geocode = function(address, callback) {
   });
 };
 
+module.exports.geocodeAuthenticated = function(key, address, callback) {
+  get(url + '/address?key='+key).query({location: address, maxResults: 1 }).end(function(err, res) {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, res.body.results[0].locations[0]);
+    }
+  });
+};
+
 /**
  * Reverse geocode a lat, lon
  */
@@ -39,12 +49,40 @@ module.exports.reverse = function(coordinates, callback) {
   });
 };
 
+module.exports.reverseAuthenticated = function(key, coordinates, callback) {
+  get(url + '/reverse?key='+key).query({ location: coordinates.latitude + ',' + coordinates.longitude, maxResults: 1 }).end(function(err, res) {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, res.body.results[0].locations[0]);
+    }
+  });
+};
+
 /**
  * Batch geocode addresses
  */
 
 module.exports.batch = function(addresses, callback) {
   var batch = get(url + '/batch');
+  for (var i = 0; i < addresses.length; i++) {
+    batch.query({ location: addresses[i] });
+  }
+  batch.end(function(err, res) {
+    if (err) {
+      callback(err);
+    } else {
+      var results = res.body.results.map(function(result) {
+        return result.locations[0];
+      });
+
+      callback(null, results);
+    }
+  });
+};
+
+module.exports.batchAuthenticated = function(key, addresses, callback) {
+  var batch = get(url + '/batch?key='+key);
   for (var i = 0; i < addresses.length; i++) {
     batch.query({ location: addresses[i] });
   }
