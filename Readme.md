@@ -45,23 +45,25 @@
 
 ## API
 
-### .geocode(address, callback)
+  API Keys can be set as an environment variable retrieved with `process.env.MAPQUEST_API_KEY` or passed in the options object as `key`.
 
-  Given an address, passes the callback a location object.
+### .geocode(options, callback)
 
-    mapquest.geocode('1600 Amphitheatre Parkway, Santa Clara CA 94043', function(err, location) { console.log(location); });
+  Given an address, passes the callback a location object. Pass `all: true` in the options object to receive an array of all the locations retrieved.
 
-### .reverse(coordinates, callback)
+    mapquest.geocode({ address: '1600 Amphitheatre Parkway, Santa Clara CA 94043' }, function(err, location) { console.log(location); });
 
-  Given a coordinates object containing latitude and longitude, passes the callback a location object.
+### .reverse(options, callback)
 
-    mapquest.reverse({ latitude: 37.423581, longitude: -122.086672 }, function(err, location) { console.log(location); });
+  Given a coordinates object containing latitude and longitude, passes the callback a location object. Pass `all: true` in the options object to receive an array of all the locations retrieved.
 
-### .batch(addresses, callback)
+    mapquest.reverse({ coordinates: { latitude: 37.423581, longitude: -122.086672 } }, function(err, location) { console.log(location); });
+
+### .batch(options, callback)
 
   Given an array of addresse, passes the callback an array of location objects.
 
-    mapquest.batch([ '1600 Amphitheatre Parkway, Santa Clara CA 94043' ], function(err, locations) { console.log(locations); });
+    mapquest.batch({ addresses: [ '1600 Amphitheatre Parkway, Santa Clara CA 94043' ] }, function(err, locations) { console.log(locations); });
 
 ## License
 

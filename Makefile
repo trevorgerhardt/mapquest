@@ -1,14 +1,11 @@
 
-build: components index.js
-	@component build --dev
-
-components: component.json
-	@component install --dev
-
 clean:
-	rm -fr build components template.js
+	rm -fr node_modules
+
+install:
+	npm install
 
 test:
-	@mocha --reporter spec
+	./node_modules/.bin/mocha --reporter spec --timeout 10s
 
-.PHONY: clean test
+.PHONY: clean install test

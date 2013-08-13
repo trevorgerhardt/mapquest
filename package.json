@@ -1,6 +1,6 @@
 {
   "name": "mapquest",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Geocode, reverse geocode, and batch geocode using MapQuests open api.",
   "main": "index.js",
   "scripts": {
@@ -18,12 +18,12 @@
   ],
   "author": "Trevor Gerhardt",
   "license": "BSD",
-  "readmeFilename": "Readme.md",
   "dependencies": {
     "superagent": "*"
   },
   "devDependencies": {
-    "mocha": "*"
-  , "should": "*"
+    "component": "*",
+    "mocha": "*",
+    "should": "*"
   }
 }
