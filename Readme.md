@@ -3,10 +3,6 @@
 
   Geocode, reverse geocode, and batch geocode using [MapQuests open api](http://open.mapquestapi.com/geocoding/).
 
-## Installation via component
-
-    $ component install trevorgerhardt/mapquest
-
 ## Installation via npm
 
     $ npm install mapquest
@@ -15,10 +11,10 @@
 
   All functions return a location object. An example location object for the Google Headquarters is below.
 
-    { 
-      latLng: { 
-        lng: -122.086672, 
-        lat: 37.423581 
+    {
+      latLng: {
+        lng: -122.086672,
+        lat: 37.423581
       },
       adminArea4: 'Santa Clara County',
       adminArea5Type: 'City',
@@ -28,9 +24,9 @@
       adminArea1: 'United States of America',
       adminArea3: 'California',
       type: 's',
-      displayLatLng: { 
-        lng: -122.086672, 
-        lat: 37.423581 
+      displayLatLng: {
+        lng: -122.086672,
+        lat: 37.423581
       },
       linkId: 0,
       postalCode: '94043',
@@ -40,7 +36,7 @@
       geocodeQuality: 'ADDRESS',
       geocodeQualityCode: 'L1AXA',
       mapUrl: 'http://open.mapquestapi.com/staticmap/v4/getmap?type=map&size=225,160&pois=purple-1,37.423581,-122.086672,0,0|&center=37.423581,-122.086672&zoom=12&key=Kmjtd%7Cluu7n162n1%2C22%3Do5-h61wh&rand=2110607258',
-      adminArea3Type: 'State' 
+      adminArea3Type: 'State'
     }
 
 ## API

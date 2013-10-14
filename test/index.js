@@ -10,7 +10,7 @@ var mapquest = require('../');
  * API Key
  */
 
-var API_KEY = 'FAKE_API_KEY';
+var API_KEY = 'FAKE_API_KEYs';
 
 /**
  * Make sure API_KEY has been changed
