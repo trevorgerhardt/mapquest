@@ -1,7 +1,6 @@
-
 # mapquest
 
-  Geocode, reverse geocode, and batch geocode using [MapQuests open api](http://open.mapquestapi.com/geocoding/).
+  Geocode, reverse geocode, and batch geocode using [MapQuest's open api](http://open.mapquestapi.com/geocoding/).
 
 ## Installation via npm
 
