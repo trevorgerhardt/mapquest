@@ -9,7 +9,7 @@ var get = require('superagent').get;
  * MapQuest base url
  */
 
-var url = 'http://open.mapquestapi.com/geocoding/v1';
+var url = 'https://open.mapquestapi.com/geocoding/v1';
 
 /**
  * Geocode an address
